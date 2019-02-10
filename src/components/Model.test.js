@@ -1,9 +1,13 @@
 var assert = require('assert')
 
-import cards from './Model'
+import * as model from './Model'
 
-test('length is 9', () => {
-  expect(cards.length).toBe(8)
+test('The total number of card "types" is 13.', () => {
+  expect(model.types.length).toBe(13)
+})
+
+test('The total number of card colors is 4.', () => {
+  expect(model.colors.length).toBe(4)
 })
 
 // describe('Array', function() {
