@@ -4,9 +4,13 @@ const colors = ["red", "yellow", "green", "blue"]
 
 
 
+const drawRandomCard = () => {
+  return deck[0]
+}
 
+let deck
 const createMainDeck = () => {
-  const array = []
+  deck = []
   const wild = {
     type: "wild",
     color: "none"
@@ -19,12 +23,12 @@ const createMainDeck = () => {
   for (let x in types) {
     for (let y in colors) {
       if (types[x] === 0) {
-        array.push({
+        deck.push({
           type: types[x],
           color: colors[y]
         })
       } else {
-        array.push({
+        deck.push({
           type: types[x],
           color: colors[y]
         }, {
@@ -35,15 +39,16 @@ const createMainDeck = () => {
     }
   }
   for (let i = 0; i < 4; i++) {
-    array.push(wild)
-    array.push(wild4)
+    deck.push(wild)
+    deck.push(wild4)
   }
-  return array
+  return deck
 }
 
 
 module.exports = {
   types: types,
   colors: colors,
-  createMainDeck: createMainDeck
+  createMainDeck: createMainDeck,
+  drawRandomCard: drawRandomCard
 }

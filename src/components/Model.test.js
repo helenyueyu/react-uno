@@ -26,9 +26,13 @@ test('Expect the deck to contain 8 of each: null, reverse, draw.', () => {
   expect(model.createMainDeck().filter(x => x.type==="draw").length).toBe(8)
 })
 
-test('Expect the deck to contain 4 of each type of wild card', () => {
+test('Expect the deck to contain 4 of each type of wild card.', () => {
   expect(model.createMainDeck().filter(x => x.type==="wild").length).toBe(4)
   expect(model.createMainDeck().filter(x => x.type==="wild4").length).toBe(4)
+})
+
+test('Expect to draw a card.', () => {
+  expect(model.drawRandomCard().type).toBe(0)
 })
 
 // describe('Array', function() {
